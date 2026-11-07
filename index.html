@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Servicing Our Youth (SOY) empowers Bronx youth through civic education, entrepreneurship, and community advocacy.">
+    <title>Servicing Our Youth (SOY) | Empowering Bronx Youth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0F172A',
+                            gold: '#F59E0B',
+                            goldHover: '#D97706',
+                            slate: '#1E293B'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+    <nav class="sticky top-0 z-40 bg-brand-navy text-white shadow-lg" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#top" class="flex items-center space-x-3" aria-label="SOY home">
+                <span class="text-3xl font-black tracking-widest text-brand-gold">SOY</span>
+                <span class="hidden sm:block border-l border-slate-700 pl-3">
+                    <span class="block text-xs uppercase tracking-wider text-slate-400 font-bold">Servicing Our Youth</span>
+                    <span class="block text-xs text-brand-gold font-medium">Bronx, New York</span>
+                </span>
+            </a>
+            <div class="hidden md:flex space-x-8 font-medium text-slate-300 text-sm">
+                <a href="#about" class="hover:text-brand-gold transition-colors">About</a>
+                <a href="#programs" class="hover:text-brand-gold transition-colors">Programs</a>
+                <a href="#lab" class="hover:text-brand-gold transition-colors">Youth Lab</a>
+                <a href="#founder" class="hover:text-brand-gold transition-colors">Founder</a>
+                <a href="#contact" class="hover:text-brand-gold transition-colors">Contact</a>
+            </div>
+            <button type="button" onclick="openModal('enrollModal')" class="bg-brand-gold text-brand-navy font-bold px-5 py-2.5 rounded-lg hover:bg-brand-goldHover transition-all shadow-md">Enroll / Support</button>
+        </div>
+    </nav>
+
+    <header id="top" class="relative bg-brand-navy text-white py-24 px-6 overflow-hidden">
+        <div class="absolute inset-0 opacity-15 bg-cover bg-center" aria-hidden="true" style="background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div id="about" class="max-w-4xl mx-auto text-center relative z-10 space-y-6">
+            <span class="inline-flex items-center space-x-2 bg-brand-gold/10 text-brand-gold border border-brand-gold/30 font-semibold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Rooted in the Bronx, NYC</span>
+            </span>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">Cultivating the Next Generation of Bronx Leaders</h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto font-normal">Founded by activist <strong class="text-white">Joel R. Rivera</strong>, SOY provides Bronx youth with hands-on tools in civic education, business entrepreneurship, and community advocacy.</p>
+            <div class="pt-4 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#programs" class="bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-lg hover:bg-brand-goldHover transition text-center shadow-lg">Explore Programs</a>
+                <a href="#lab" class="border border-slate-700 bg-brand-slate text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-slate-700 transition text-center">Try Interactive Lab</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-brand-gold text-brand-navy py-10 shadow-inner" aria-label="SOY impact">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="space-y-1"><div class="text-4xl font-black">500+</div><div class="uppercase tracking-wider text-xs font-extrabold text-slate-900">Bronx Youth Mentored</div></div>
+            <div class="space-y-1"><div class="text-4xl font-black">50+</div><div class="uppercase tracking-wider text-xs font-extrabold text-slate-900">Civic &amp; Business Workshops</div></div>
+            <div class="space-y-1"><div class="text-4xl font-black">20+</div><div class="uppercase tracking-wider text-xs font-extrabold text-slate-900">Student Projects Launched</div></div>
+        </div>
+    </section>
+
+    <section id="programs" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Our Core Pillars</h2>
+            <p class="text-slate-600">Select a program below to explore curriculum details, skills learned, and real-world outcomes.</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3 mb-10" role="tablist" aria-label="SOY programs">
+            <button type="button" onclick="switchTab('civics')" id="tab-civics" role="tab" aria-selected="true" aria-controls="panel-civics" class="program-tab bg-brand-navy text-white font-semibold px-6 py-3 rounded-xl transition shadow-sm flex items-center space-x-2"><i class="fa-solid fa-landmark" aria-hidden="true"></i><span>Civic Education</span></button>
+            <button type="button" onclick="switchTab('business')" id="tab-business" role="tab" aria-selected="false" aria-controls="panel-business" class="program-tab bg-white text-slate-700 hover:bg-slate-100 font-semibold px-6 py-3 rounded-xl transition shadow-sm border border-slate-200 flex items-center space-x-2"><i class="fa-solid fa-chart-line" aria-hidden="true"></i><span>Business Entrepreneurship</span></button>
+            <button type="button" onclick="switchTab('activism')" id="tab-activism" role="tab" aria-selected="false" aria-controls="panel-activism" class="program-tab bg-white text-slate-700 hover:bg-slate-100 font-semibold px-6 py-3 rounded-xl transition shadow-sm border border-slate-200 flex items-center space-x-2"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i><span>Community Activism</span></button>
+        </div>
+
+        <div id="panel-civics" class="program-panel bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-200" role="tabpanel" aria-labelledby="tab-civics">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <span class="bg-blue-100 text-blue-700 font-bold px-3 py-1 rounded-md text-xs uppercase tracking-wider">Pillar 01</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Civic Education &amp; Municipal Knowledge</h3>
+                    <p class="text-slate-600 leading-relaxed">Understanding how local government operates is key to making real neighborhood changes. SOY breaks down complex municipal systems into actionable lessons for young leaders.</p>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li><i class="fa-solid fa-circle-check text-blue-600" aria-hidden="true"></i> NYC City Council &amp; Community Board Operations</li>
+                        <li><i class="fa-solid fa-circle-check text-blue-600" aria-hidden="true"></i> Voter Registration &amp; Policy Analysis</li>
+                        <li><i class="fa-solid fa-circle-check text-blue-600" aria-hidden="true"></i> Public Testimony &amp; Legislative Advocacy</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 space-y-4">
+                    <h4 class="font-bold text-slate-900 border-b pb-2"><i class="fa-solid fa-trophy text-brand-gold" aria-hidden="true"></i> Milestone Project</h4>
+                    <p class="text-sm text-slate-600">Students host a <strong>Mock Bronx Town Hall</strong> where they draft policy recommendations and pitch them to visiting community leaders and council representatives.</p>
+                    <button type="button" onclick="openModal('enrollModal')" class="w-full bg-blue-600 text-white font-semibold py-2.5 rounded-lg hover:bg-blue-700 transition text-sm">Join Civics Cohort</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="panel-business" class="program-panel hidden bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-200" role="tabpanel" aria-labelledby="tab-business" aria-hidden="true">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <span class="bg-amber-100 text-amber-800 font-bold px-3 py-1 rounded-md text-xs uppercase tracking-wider">Pillar 02</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Youth Business Incubator</h3>
+                    <p class="text-slate-600 leading-relaxed">Economic empowerment drives community strength. Our entrepreneurship workshops teach youth how to turn their creative passions into viable business enterprises.</p>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li><i class="fa-solid fa-circle-check text-brand-gold" aria-hidden="true"></i> Business Model Canvas &amp; Financial Literacy</li>
+                        <li><i class="fa-solid fa-circle-check text-brand-gold" aria-hidden="true"></i> Digital Branding, Marketing &amp; Web Tools</li>
+                        <li><i class="fa-solid fa-circle-check text-brand-gold" aria-hidden="true"></i> Pitch Deck Creation &amp; Investor Presentation</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 space-y-4">
+                    <h4 class="font-bold text-slate-900 border-b pb-2"><i class="fa-solid fa-trophy text-brand-gold" aria-hidden="true"></i> Milestone Project</h4>
+                    <p class="text-sm text-slate-600">Graduates participate in the annual <strong>SOY Youth Business Pitch Competition</strong>, competing for micro-grant funding and mentorship.</p>
+                    <button type="button" onclick="openModal('enrollModal')" class="w-full bg-brand-gold text-brand-navy font-bold py-2.5 rounded-lg hover:bg-brand-goldHover transition text-sm">Apply for Business Incubator</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="panel-activism" class="program-panel hidden bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-200" role="tabpanel" aria-labelledby="tab-activism" aria-hidden="true">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <span class="bg-emerald-100 text-emerald-800 font-bold px-3 py-1 rounded-md text-xs uppercase tracking-wider">Pillar 03</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Grassroots Organizing &amp; Advocacy</h3>
+                    <p class="text-slate-600 leading-relaxed">Inspired by Joel R. Rivera’s activism work, this track trains young people to identify local community issues and execute effective, positive campaigns for change.</p>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li><i class="fa-solid fa-circle-check text-emerald-600" aria-hidden="true"></i> Public Speaking &amp; Strategic Communication</li>
+                        <li><i class="fa-solid fa-circle-check text-emerald-600" aria-hidden="true"></i> Coalition Building &amp; Neighborhood Campaigns</li>
+                        <li><i class="fa-solid fa-circle-check text-emerald-600" aria-hidden="true"></i> Environmental &amp; Social Justice Projects</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 space-y-4">
+                    <h4 class="font-bold text-slate-900 border-b pb-2"><i class="fa-solid fa-trophy text-brand-gold" aria-hidden="true"></i> Milestone Project</h4>
+                    <p class="text-sm text-slate-600">Students plan and lead a <strong>Bronx Neighborhood Action Initiative</strong> focused on local housing, clean streets, or youth recreation facilities.</p>
+                    <button type="button" onclick="openModal('enrollModal')" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:bg-emerald-700 transition text-sm">Become a Youth Organizer</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lab" class="py-16 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-brand-gold font-bold uppercase tracking-wider text-xs">Interactive Tool</span>
+                <h2 class="text-3xl font-bold text-slate-900">SOY Youth Innovation Lab</h2>
+                <p class="text-slate-600 text-sm">Practice formulating your student business idea or test your civic knowledge.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+                    <div class="flex items-center space-x-3"><div class="w-10 h-10 bg-amber-100 text-brand-gold rounded-lg flex items-center justify-center font-bold"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></div><h3 class="font-bold text-slate-900">Student Pitch Builder</h3></div>
+                    <div class="space-y-3">
+                        <div><label for="pitchProblem" class="block text-xs font-semibold text-slate-600 mb-1">Target Community Problem</label><input type="text" id="pitchProblem" placeholder="e.g., Lack of affordable fresh food options" class="w-full text-sm px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-gold outline-none"></div>
+                        <div><label for="pitchSolution" class="block text-xs font-semibold text-slate-600 mb-1">Your Business Idea</label><input type="text" id="pitchSolution" placeholder="e.g., Mobile pop-up organic produce cart" class="w-full text-sm px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-gold outline-none"></div>
+                        <button type="button" onclick="generatePitch()" class="w-full bg-brand-navy text-white text-sm font-bold py-2.5 rounded-lg hover:bg-slate-800 transition">Generate Elevator Pitch</button>
+                    </div>
+                    <div id="pitchResult" role="status" aria-live="polite" class="hidden bg-slate-50 p-4 rounded-lg border border-slate-200 text-xs text-slate-700 italic"></div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+                    <div class="flex items-center space-x-3"><div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold"><i class="fa-solid fa-question" aria-hidden="true"></i></div><h3 class="font-bold text-slate-900">Quick Civics Check</h3></div>
+                    <div id="quizContainer" class="space-y-3">
+                        <p id="quizQuestion" class="text-sm font-medium text-slate-800">What local body advises NYC on zoning, land use, and community budgets?</p>
+                        <div class="space-y-2">
+                            <button type="button" onclick="checkAnswer(false, this)" class="quiz-answer w-full text-left text-xs p-3 rounded-lg border border-slate-200 hover:bg-slate-50 transition">A) The Federal Reserve</button>
+                            <button type="button" onclick="checkAnswer(true, this)" class="quiz-answer w-full text-left text-xs p-3 rounded-lg border border-slate-200 hover:bg-slate-50 transition">B) Local Community Boards</button>
+                            <button type="button" onclick="checkAnswer(false, this)" class="quiz-answer w-full text-left text-xs p-3 rounded-lg border border-slate-200 hover:bg-slate-50 transition">C) The NY State Assembly</button>
+                        </div>
+                    </div>
+                    <div id="quizFeedback" role="status" aria-live="polite" class="hidden text-xs font-semibold"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="founder" class="bg-brand-navy text-white py-20 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="text-brand-gold font-bold uppercase tracking-wider text-xs">Founder &amp; Activist</span>
+                <h2 class="text-3xl md:text-4xl font-bold">The Vision Behind SOY</h2>
+                <p class="text-slate-300 leading-relaxed">Created by Bronx activist <strong class="text-white">Joel R. Rivera</strong>, Servicing Our Youth (SOY) emerged directly from community advocacy work across the borough.</p>
+                <p class="text-slate-300 leading-relaxed">Joel's core mission is ensuring young people from the Bronx don't just participate in their community's future—they actively design it through political literacy, business ownership, and community leadership.</p>
+            </div>
+            <div class="bg-brand-slate p-8 rounded-2xl border border-slate-700 relative">
+                <i class="fa-solid fa-quote-left text-4xl text-brand-gold/30 absolute top-4 left-4" aria-hidden="true"></i>
+                <blockquote class="text-lg italic text-slate-200 mb-6 relative z-10 pt-4">“When we teach our youth how local policy works and show them how to start their own enterprises, we give them the power to shape the Bronx on their own terms.”</blockquote>
+                <div class="flex items-center space-x-4 border-t border-slate-700 pt-4"><div class="w-12 h-12 rounded-full bg-brand-gold text-brand-navy font-black flex items-center justify-center text-lg" aria-hidden="true">JR</div><div><p class="font-bold text-white">Joel R. Rivera</p><p class="text-xs text-brand-gold">Founder &amp; Bronx Community Activist</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 px-6 max-w-4xl mx-auto">
+        <div class="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-200 space-y-8">
+            <div class="text-center space-y-3"><h2 class="text-3xl font-bold text-slate-900">Get Involved With SOY</h2><p class="text-slate-600 text-sm">Have a question or looking to support our Bronx youth programs? Drop us a message.</p></div>
+            <form id="contactForm" onsubmit="handleContact(event)" class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div><label for="contactName" class="block text-xs font-semibold text-slate-700 mb-1">Full Name *</label><input id="contactName" name="name" type="text" required autocomplete="name" placeholder="Your name" class="w-full text-sm px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-gold outline-none"></div>
+                    <div><label for="contactEmail" class="block text-xs font-semibold text-slate-700 mb-1">Email Address *</label><input id="contactEmail" name="email" type="email" required autocomplete="email" placeholder="you@example.com" class="w-full text-sm px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-gold outline-none"></div>
+                </div>
+                <div><label for="inquiryType" class="block text-xs font-semibold text-slate-700 mb-1">Inquiry Type</label><select id="inquiryType" name="inquiryType" class="w-full text-sm px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-gold outline-none bg-white"><option>General Information</option><option>Youth Program Enrollment</option><option>Volunteer / Mentor Opportunities</option><option>Community Sponsorship</option></select></div>
+                <div><label for="contactMessage" class="block text-xs font-semibold text-slate-700 mb-1">Message *</label><textarea id="contactMessage" name="message" required rows="4" placeholder="How can we help you?" class="w-full text-sm px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-gold outline-none"></textarea></div>
+                <button type="submit" class="w-full bg-brand-navy text-white font-bold py-3.5 rounded-lg hover:bg-slate-800 transition">Send Message</button>
+            </form>
+            <div id="contactSuccess" role="status" aria-live="polite" class="hidden bg-emerald-50 text-emerald-800 p-4 rounded-lg text-center text-sm font-semibold">Thank you! Your message has been received. Please note that this demo form does not send messages to SOY.</div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-slate-400 py-12 px-6 border-t border-slate-800 text-sm">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+            <div class="space-y-3"><span class="text-2xl font-black text-brand-gold">SOY</span><p class="text-xs text-slate-400">Servicing Our Youth is dedicated to mentoring, educating, and empowering the youth of the Bronx, NY.</p></div>
+            <div><h2 class="font-bold text-white mb-3">Quick Links</h2><ul class="space-y-2 text-xs"><li><a href="#about" class="hover:text-white">About Organization</a></li><li><a href="#programs" class="hover:text-white">Programs &amp; Curriculum</a></li><li><a href="#founder" class="hover:text-white">Founder Joel R. Rivera</a></li></ul></div>
+            <div><h2 class="font-bold text-white mb-3">Location</h2><p class="text-xs">The Bronx, New York</p><p class="text-xs mt-2 text-slate-400">Founded by Joel R. Rivera</p></div>
+        </div>
+        <div class="max-w-7xl mx-auto border-t border-slate-900 pt-6 text-center text-xs text-slate-500">&copy; Servicing Our Youth (SOY). All rights reserved.</div>
+    </footer>
+
+    <div id="enrollModal" class="fixed inset-0 z-50 hidden bg-slate-900/70 backdrop-blur-sm items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="enrollTitle" aria-hidden="true">
+        <div class="bg-white w-full max-w-lg rounded-2xl p-6 md:p-8 shadow-2xl relative space-y-6">
+            <button type="button" onclick="closeModal('enrollModal')" aria-label="Close enrollment dialog" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl font-bold">&times;</button>
+            <div class="space-y-2"><h2 id="enrollTitle" class="text-2xl font-bold text-slate-900">Join SOY</h2><p class="text-xs text-slate-600">Register a student or sign up to support Bronx youth as a mentor.</p></div>
+            <form id="enrollForm" onsubmit="handleEnroll(event)" class="space-y-4">
+                <div><label for="enrollName" class="block text-xs font-semibold text-slate-700 mb-1">Your Name *</label><input id="enrollName" name="name" type="text" required autocomplete="name" placeholder="Full Name" class="w-full text-sm px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-gold outline-none"></div>
+                <div><label for="enrollEmail" class="block text-xs font-semibold text-slate-700 mb-1">Email Address *</label><input id="enrollEmail" name="email" type="email" required autocomplete="email" placeholder="you@example.com" class="w-full text-sm px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-gold outline-none"></div>
+                <div><label for="enrollRole" class="block text-xs font-semibold text-slate-700 mb-1">Role</label><select id="enrollRole" name="role" class="w-full text-sm px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-gold outline-none bg-white"><option>Youth Student Participant</option><option>Parent / Guardian</option><option>Community Mentor</option><option>Donor / Sponsor</option></select></div>
+                <button type="submit" class="w-full bg-brand-gold text-brand-navy font-bold py-3 rounded-lg hover:bg-brand-goldHover transition">Submit Registration</button>
+            </form>
+            <div id="enrollSuccess" role="status" aria-live="polite" class="hidden bg-emerald-50 text-emerald-800 p-4 rounded-lg text-center text-xs font-semibold">Registration recorded for this demo. No information has been sent to SOY.</div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabId) {
+            const validTabs = ['civics', 'business', 'activism'];
+            if (!validTabs.includes(tabId)) return;
+            document.querySelectorAll('.program-tab').forEach(tab => {
+                const selected = tab.id === `tab-${tabId}`;
+                tab.setAttribute('aria-selected', String(selected));
+                tab.classList.toggle('bg-brand-navy', selected);
+                tab.classList.toggle('text-white', selected);
+                tab.classList.toggle('bg-white', !selected);
+                tab.classList.toggle('text-slate-700', !selected);
+                tab.classList.toggle('border', !selected);
+                tab.classList.toggle('border-slate-200', !selected);
+            });
+            document.querySelectorAll('.program-panel').forEach(panel => {
+                const selected = panel.id === `panel-${tabId}`;
+                panel.classList.toggle('hidden', !selected);
+                panel.setAttribute('aria-hidden', String(!selected));
+            });
+        }
+
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (!modal) return;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            modal.setAttribute('aria-hidden', 'false');
+            modal.querySelector('input')?.focus();
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (!modal) return;
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        function generatePitch() {
+            const problem = document.getElementById('pitchProblem').value.trim();
+            const solution = document.getElementById('pitchSolution').value.trim();
+            const result = document.getElementById('pitchResult');
+            if (!problem || !solution) {
+                window.alert('Please fill out both fields to generate your pitch.');
+                return;
+            }
+            // textContent keeps user-entered pitch text inert rather than interpreting it as HTML.
+            result.textContent = `Elevator Pitch: “In the Bronx, many residents face ${problem}. Our venture addresses this directly by providing ${solution} to build local value and long-term economic independence.”`;
+            result.classList.remove('hidden');
+        }
+
+        function checkAnswer(isCorrect, element) {
+            const feedback = document.getElementById('quizFeedback');
+            feedback.textContent = isCorrect
+                ? 'Correct! NYC Community Boards play an active role in land use, zoning, and recommending municipal budget priorities.'
+                : 'Incorrect. Try again! (Hint: Look for local community bodies).';
+            feedback.className = `text-xs font-semibold ${isCorrect ? 'text-emerald-600' : 'text-red-600'}`;
+            document.querySelectorAll('.quiz-answer').forEach(answer => answer.removeAttribute('aria-pressed'));
+            element.setAttribute('aria-pressed', 'true');
+        }
+
+        function handleContact(event) {
+            event.preventDefault();
+            document.getElementById('contactForm').reset();
+            document.getElementById('contactSuccess').classList.remove('hidden');
+        }
+
+        function handleEnroll(event) {
+            event.preventDefault();
+            document.getElementById('enrollForm').reset();
+            document.getElementById('enrollSuccess').classList.remove('hidden');
+        }
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') closeModal('enrollModal');
+        });
+    </script>
+</body>
+</html>
